@@ -70,9 +70,10 @@ class PedestalFan1C(Fan1CEntity, FanEntity):
         if percentage == 0:
             await self.async_turn_off()
             return
-        await self.coordinator.async_command("on")
         if percentage is not None:
             await self.async_set_percentage(percentage)
+        else:
+            await self.coordinator.async_command("on")
         if preset_mode is not None:
             await self.async_set_preset_mode(preset_mode)
 
@@ -84,6 +85,10 @@ class PedestalFan1C(Fan1CEntity, FanEntity):
             await self.async_turn_off()
             return
         speed = min(3, max(1, (percentage * 3 + 99) // 100))
+        if not self.is_on:
+            await self.coordinator.async_command("on")
+        if self.coordinator.data.speed == speed:
+            return
         await self.coordinator.async_command("set_speed", speed)
 
     async def async_oscillate(self, oscillating: bool) -> None:
