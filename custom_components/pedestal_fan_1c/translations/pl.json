@@ -1,0 +1,32 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Połącz Mi Smart Standing Fan 1C",
+        "description": "Podaj lokalny adres IP i 32-znakowy token urządzenia Xiaomi.",
+        "data": {"host": "Adres IP", "token": "Token urządzenia"},
+        "data_description": {
+          "host": "Zarezerwuj ten adres dla wentylatora w ustawieniach DHCP routera.",
+          "token": "32-znakowy token szesnastkowy przypisany do wentylatora."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Nie udało się połączyć z wentylatorem. Sprawdź adres, token i sieć.",
+      "invalid_token": "Token musi zawierać dokładnie 32 znaki."
+    },
+    "abort": {"already_configured": "Ten wentylator jest już skonfigurowany."}
+  },
+  "entity": {
+    "fan": {"fan": {"name": "Wentylator"}},
+    "switch": {
+      "led": {"name": "Kontrolka"},
+      "buzzer": {"name": "Sygnał dźwiękowy"},
+      "child_lock": {"name": "Blokada rodzicielska"}
+    },
+    "number": {"delay_off": {"name": "Opóźnione wyłączenie"}}
+  },
+  "exceptions": {
+    "command_failed": {"message": "Wentylator nie przyjął polecenia: {error}"}
+  }
+}
