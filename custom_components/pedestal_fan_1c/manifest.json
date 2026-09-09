@@ -3,10 +3,10 @@
   "name": "Xiaomi Mi Smart Standing Fan 1C",
   "codeowners": ["@g1n10l"],
   "config_flow": true,
-  "documentation": "https://github.com/g1n10l/Pedestal-Fan-Fan-1C",
+  "documentation": "https://github.com/g1n10l/Xiaomi-Pedestal-Fan-Fan-1C",
   "integration_type": "device",
   "iot_class": "local_polling",
-  "issue_tracker": "https://github.com/g1n10l/Pedestal-Fan-Fan-1C/issues",
+  "issue_tracker": "https://github.com/g1n10l/Xiaomi-Pedestal-Fan-Fan-1C/issues",
   "loggers": ["miio"],
   "requirements": ["python-miio==0.5.12"],
   "version": "1.0.4"
