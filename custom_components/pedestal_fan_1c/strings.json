@@ -1,0 +1,37 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect Mi Smart Standing Fan 1C",
+        "description": "Enter the local IP address and the 32-character Xiaomi device token.",
+        "data": {
+          "host": "IP address",
+          "token": "Device token"
+        },
+        "data_description": {
+          "host": "Keep this address fixed with a DHCP reservation.",
+          "token": "The 32-character hexadecimal token assigned to the fan."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not connect to the fan. Check the address, token, and network.",
+      "invalid_token": "The token must contain exactly 32 characters."
+    },
+    "abort": {
+      "already_configured": "This fan is already configured."
+    }
+  },
+  "entity": {
+    "fan": {"fan": {"name": "Fan"}},
+    "switch": {
+      "led": {"name": "Indicator light"},
+      "buzzer": {"name": "Buzzer"},
+      "child_lock": {"name": "Child lock"}
+    },
+    "number": {"delay_off": {"name": "Delayed shutoff"}}
+  },
+  "exceptions": {
+    "command_failed": {"message": "The fan did not accept the command: {error}"}
+  }
+}
